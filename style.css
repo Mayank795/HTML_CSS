@@ -6,14 +6,14 @@
 
 body {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 #main {
   display: flex;
   flex: 1;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 #main > article {
@@ -49,32 +49,69 @@ header, footer, article, nav, aside {
   padding: 1em;
 }
 
-.cards {
+/* Old Image Grid */
+.image-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;  
-  flex: 1 1 auto; 
+  width: 100%;
+  flex: 1 1 auto;
 }
 
-.cards img {
+.image-grid img {
   max-width: 23vw;
   width: 100%;
   border: 3px solid #000;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
 }
-article {
-  flex: 1;
+
+/* New Card Layout */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* Ensure all cards are the same height */
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  flex: 1 1 auto;
+  margin-top: 20px;
+}
+
+.card {
+  flex: 0 0 200px; /* Fixed width for all cards */
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  text-align: center;
+}
+
+.card img {
+  max-width: 100%;
+}
+
+.card .text {
+  padding: 0 20px 20px;
+}
+
+.card .text > button {
+  background: gray;
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.card .text > button:hover {
+  background: darkgray;
 }
 
 footer {
-  background: yellowgreen;
-  height: 20vh;
-  text-align: center;
-  line-height: 20vh;
-  font-size: 1.5rem;
-  font-weight: bold;
-  clear: both; /* Ensure it stays below content */
+  clear: both;
 }
